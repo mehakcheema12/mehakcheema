@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mehakpreet Kaur Cheema — Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Mehakpreet Kaur Cheema, a CSE undergrad, MERN full-stack developer and graphic designer from Hoshiarpur, Punjab.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mehakpreet Kaur Cheema — Full-Stack Developer + Designer">
+<meta property="og:description" content="Full-stack MERN projects and graphic design by Mehakpreet Kaur Cheema.">
+<meta property="og:image" content="images/mehak.jpg">
+<meta name="theme-color" content="#472F26">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23472F26'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial Black,Arial,sans-serif' font-weight='700' font-size='38' fill='%23FEF0B6'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Unbounded:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Pinyon+Script&family=Special+Elite&family=Noto+Sans+Gurmukhi:wght@700&family=Noto+Sans+Devanagari:wght@700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<!-- Everything personal lives in config.js -->
+<script src="config.js"></script>
+</head>
+<body>
+
+<!-- ============ ENVELOPE: break the wax seal, the letter slides out and becomes the loader ============ -->
+<div class="envx" id="envx">
+  <svg class="envx-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- paper grain -->
+      <filter id="exGrain" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="3" stitchTiles="stitch"/>
+        <feColorMatrix values="0 0 0 0 .28  0 0 0 0 .2  0 0 0 0 .14  0 0 0 .55 0"/>
+      </filter>
+      <!-- wax: wobbly edge, domed, lit from the top left -->
+      <filter id="exWax" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="11" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="11" xChannelSelector="R" yChannelSelector="G" result="shape"/>
+        <feGaussianBlur in="shape" stdDeviation="5.5" result="bump"/>
+        <feDiffuseLighting in="bump" surfaceScale="5" diffuseConstant="1.28" lighting-color="#fff" result="diff"><feDistantLight azimuth="225" elevation="52"/></feDiffuseLighting>
+        <feComposite in="shape" in2="diff" operator="arithmetic" k1="1" result="shaded"/>
+        <feSpecularLighting in="bump" surfaceScale="6" specularConstant="1.05" specularExponent="26" lighting-color="#ffffff" result="spec"><fePointLight x="28" y="14" z="80"/></feSpecularLighting>
+        <feComposite in="spec" in2="shape" operator="in" result="specIn"/>
+        <feComposite in="specIn" in2="shaded" operator="arithmetic" k2=".75" k3="1"/>
+      </filter>
+      <!-- the pressed monogram: raised, crisp, with a soft shadow -->
+      <filter id="exEmboss" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="1.1" result="b"/>
+        <feSpecularLighting in="b" surfaceScale="2.6" specularConstant=".95" specularExponent="16" lighting-color="#ffffff" result="s"><fePointLight x="24" y="8" z="55"/></feSpecularLighting>
+        <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
+        <feOffset in="SourceAlpha" dx="1" dy="1.3" result="o"/>
+        <feFlood flood-color="#2c4f78" flood-opacity=".5"/>
+        <feComposite in2="o" operator="in" result="sh"/>
+        <feMerge><feMergeNode in="sh"/><feMergeNode in="SourceGraphic"/><feMergeNode in="s2"/></feMerge>
+      </filter>
+      <radialGradient id="exWaxFill" cx="42%" cy="38%" r="70%">
+        <stop offset="0" stop-color="#e3f0fc"/><stop offset=".6" stop-color="#b4d4f2"/><stop offset="1" stop-color="#7fa9d6"/>
+      </radialGradient>
+      <radialGradient id="exPress" cx="50%" cy="50%" r="50%">
+        <stop offset=".72" stop-color="#5f8fc2" stop-opacity="0"/><stop offset=".93" stop-color="#4a78ab" stop-opacity=".45"/><stop offset="1" stop-color="#4a78ab" stop-opacity="0"/>
+      </radialGradient>
+      <pattern id="exLiner" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="7" height="7" style="fill:var(--cream)"/><rect width="3.5" height="7" style="fill:var(--accent)"/>
+      </pattern>
+      <linearGradient id="exInShade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#000" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".38"/>
+      </linearGradient>
+      <linearGradient id="exSideL" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" style="stop-color:var(--cream)"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--cream) 90%,var(--bg))"/>
+      </linearGradient>
+      <linearGradient id="exSideR" x1="1" y1="0" x2="0" y2="0">
+        <stop offset="0" style="stop-color:color-mix(in srgb,var(--cream) 97%,var(--bg))"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--cream) 87%,var(--bg))"/>
+      </linearGradient>
+      <linearGradient id="exBottom" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:color-mix(in srgb,var(--cream) 92%,var(--bg))"/><stop offset="1" style="stop-color:var(--cream)"/>
+      </linearGradient>
+      <linearGradient id="exFlap" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:color-mix(in srgb,var(--cream) 91%,var(--bg))"/><stop offset=".25" style="stop-color:var(--cream)"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--cream) 96%,#fff)"/>
+      </linearGradient>
+      <clipPath id="exFlapClip"><path d="M0 0H160V2L89 54.5Q80 61 71 54.5L0 2Z"/></clipPath>
+      <clipPath id="exPocketClip"><path d="M0 0L75 50Q79 53 75 56L0 100ZM160 0L85 50Q81 53 85 56L160 100ZM0 100L72 51Q80 45 88 51L160 100Z"/></clipPath>
+      <g id="exSeal">
+        <path d="M60 14C78 13 99 25 104 46c5 20-4 41-22 50-17 9-40 7-55-6C13 78 10 57 18 39 25 23 43 15 60 14z" fill="url(#exWaxFill)" filter="url(#exWax)"/>
+        <circle cx="60" cy="58" r="33" fill="url(#exPress)"/>
+        <g filter="url(#exEmboss)" fill="#8db6e2" stroke="#8db6e2">
+          <circle cx="60" cy="58" r="30" fill="none" stroke-width="2.4"/>
+          <circle cx="60" cy="58" r="26.5" fill="none" stroke-width=".8" stroke-dasharray="1.6 2.2"/>
+          <text x="60" y="73" text-anchor="middle" stroke="none" font-size="44" style="font-family:'DM Serif Display',Georgia,serif">M</text>
+        </g>
+      </g>
+    </defs>
+  </svg>
+
+  <div class="envx-stage" id="envxStage">
+    <div class="envx-shadow" aria-hidden="true"></div>
+    <div class="envx-tilt" id="envxTilt">
+      <!-- inside back of the envelope -->
+      <svg class="envx-face envx-back" viewBox="0 0 160 100" aria-hidden="true"><rect width="160" height="100" rx="2" fill="url(#exLiner)"/><rect width="160" height="100" rx="2" fill="url(#exInShade)"/></svg>
+      <!-- the letter -->
+      <div class="envx-letter" id="envxLetter" aria-hidden="true">
+        <div class="envx-lin"></div>
+      </div>
+      <!-- the front pockets -->
+      <svg class="envx-face envx-pocket" viewBox="0 0 160 100" aria-hidden="true">
+        <path d="M0 0L75 50Q79 53 75 56L0 100Z" fill="url(#exSideL)"/>
+        <path d="M160 0L85 50Q81 53 85 56L160 100Z" fill="url(#exSideR)"/>
+        <path d="M0 100L72 51Q80 45 88 51L160 100Z" fill="url(#exBottom)" style="filter:drop-shadow(0 -.6px .8px rgba(60,35,20,.18))"/>
+        <rect width="160" height="100" filter="url(#exGrain)" clip-path="url(#exPocketClip)" opacity=".35"/>
+      </svg>
+      <!-- lower half of the seal stays on the envelope -->
+      <div class="envx-seal envx-seal-b" id="envxSealB" aria-hidden="true"></div>
+      <!-- the flap, with the upper half of the seal riding on it -->
+      <div class="envx-flap" id="envxFlap" aria-hidden="true">
+        <svg class="envx-face envx-flap-out" viewBox="0 0 160 62" aria-hidden="true">
+          <path d="M0 0H160V2L89 54.5Q80 61 71 54.5L0 2Z" fill="url(#exFlap)"/>
+          <rect width="160" height="62" filter="url(#exGrain)" clip-path="url(#exFlapClip)" opacity=".35"/>
+        </svg>
+        <svg class="envx-face envx-flap-in" viewBox="0 0 160 62" aria-hidden="true">
+          <path d="M0 0H160V2L89 54.5Q80 61 71 54.5L0 2Z" fill="url(#exLiner)"/>
+          <path d="M0 0H160V2L89 54.5Q80 61 71 54.5L0 2Z" fill="url(#exInShade)" opacity=".6"/>
+        </svg>
+        <div class="envx-seal envx-seal-t" id="envxSealT"></div>
+      </div>
+      <button class="envx-btn" id="envxBtn" type="button" aria-label="Break the seal and open the envelope"></button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LOADER: hello in a few languages, then the curtain lifts ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <p class="l-hello" id="lHello">Hello</p>
+  <div class="l-foot"><span>Mehakpreet Kaur Cheema<br>Portfolio</span><span class="l-count" id="lCount">0</span></div>
+  <div class="l-bar"><i id="lBar"></i></div>
+</div>
+
+<header class="top hide" id="topBar">
+  <a class="mark" href="#top" id="mark"></a>
+  <nav class="nav" id="nav">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#education">Education</a>
+    <a class="nav-cv" id="navCv" target="_blank" rel="noopener" hidden>CV<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    <a class="nav-cta" href="#reach">Let’s talk</a>
+  </nav>
+  <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i></i><i></i></button>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO: the ID badge hanging from the top, name across the bottom ============ -->
+  <section class="intro dark" id="intro" aria-label="Introduction">
+    <canvas id="strap" aria-hidden="true"></canvas>
+    <h1 class="words" id="words"></h1>
+    <!-- EDIT: the two small notes either side of the badge (wide screens) -->
+    <p class="h-meta h-left">Based in<b>Hoshiarpur, Punjab</b></p>
+    <p class="h-meta h-right">Currently<b>Open to internships</b></p>
+    <div class="bcard" id="bcard" aria-hidden="true">
+      <div class="bclip"></div>
+      <div class="bspin" id="bspin">
+        <div class="bface bfront"><div class="bprint">
+          <div class="bband"></div>
+          <div class="bmeta"><span id="bLabel"></span><span id="bId"></span></div>
+          <div class="bring"></div><div class="bphoto" id="bPhoto"></div>
+          <div class="bwho" id="bWho"></div>
+          <div class="brule"></div>
+          <div class="bstatus"><small>Status</small><i></i><span id="bAvail"></span></div>
+          <div class="bsign" id="bSign"></div>
+          <div class="bbars"></div><div class="bseal" id="bSeal1"></div>
+        </div></div>
+        <div class="bface bback"><div class="bprint">
+          <div class="bhead"><b id="bTitle"></b><span class="bseal" id="bSeal2"></span></div>
+          <ul class="brows" id="bRows"></ul>
+          <p class="bnote" id="bNote"></p>
+          <div class="bfoot"><span id="bMail"></span><i></i></div>
+        </div></div>
+      </div>
+    </div>
+    <p class="drag-hint" id="dragHint">Drag me · click to flip</p>
+    <button class="flip-btn" id="flipBtn" type="button">Flip ID card</button>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about light" id="about" aria-labelledby="about-h">
+    <div class="awning" aria-hidden="true"></div>
+    <div class="wrap">
+      <h2 class="split" id="about-h">About <em>me</em></h2>
+      <div class="about-copy">
+        <!-- EDIT: your hook and bio. One <p> per paragraph; words ink in as you scroll. -->
+        <p class="about-hook" data-anim>Code by day.<br>Design by heart.</p>
+        <div class="fill" id="fill">
+          <p>Hi, I’m Mehakpreet <star-i></star-i></p>
+          <p>I’m a computer science undergrad at IKGPTU, based in Hoshiarpur, Punjab. I build full-stack web apps with the MERN stack and design the graphics that go with them.</p>
+          <p>Lately I’m learning AI/ML and exploring quantum computing with Qiskit, purely because I love it.</p>
+          <p>So what I build doesn’t just work. It looks good too.</p>
+          <p class="quip">Developer? Yes.<br>Designer? Also yes.</p>
+        </div>
+        <div class="ctas">
+          <button class="btn ink" type="button" id="moreOpen">More about me<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+          <div class="socials" id="socials"></div>
+        </div>
+      </div>
+      <!-- EDIT: quick facts, typed on an index card -->
+      <aside class="acard" data-anim aria-label="Quick facts">
+        <span class="acard-tape" aria-hidden="true"></span>
+        <p class="acard-h"><span>Fact sheet</span><span>No. 01</span></p>
+        <dl class="facts">
+          <div><dt>Studying</dt><dd>B.Tech CSE</dd></div>
+          <div><dt>At</dt><dd>IKGPTU ’28</dd></div>
+          <div><dt>Current CGPA</dt><dd>9.5</dd></div>
+          <div><dt>Class 12 · PSEB</dt><dd>93%</dd></div>
+          <div><dt>Based in</dt><dd>Hoshiarpur, Punjab</dd></div>
+          <div><dt>Status</dt><dd class="acard-live"><i></i>Open to internships</dd></div>
+        </dl>
+        <span class="p-sticker" aria-hidden="true">Hi!</span>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="skills dark" id="skills" aria-labelledby="skills-h">
+    <!-- crossed "do not cross" straps; words come from config.js → straps -->
+    <div class="straps" aria-hidden="true"><div class="strap s1"><div class="strap-track"></div></div><div class="strap s2"><div class="strap-track"></div></div></div>
+    <div class="wrap">
+      <div class="sk-head">
+        <h2 class="split" id="skills-h">What I <em>bring</em></h2>
+        <p data-anim>Three skill sets in one person, so an idea can go from a sketch to a live, working app without changing hands.</p>
+      </div>
+      <!-- EDIT: the three skill cards -->
+      <div class="sk-grid">
+        <article class="sk-card" data-anim>
+          <div class="sk-top"><span class="sk-n">01</span><span class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M9 14l-2 2 2 2M15 14l2 2-2 2"/></svg></span></div>
+          <h3>Frontend</h3>
+          <p>Responsive, accessible interfaces in React that feel smooth on every screen, from the first layout to the last hover state.</p>
+          <ul><li>React</li><li>JavaScript</li><li>Tailwind CSS</li><li>HTML &amp; CSS</li></ul>
+        </article>
+        <article class="sk-card hot" data-anim style="--d:.1s">
+          <div class="sk-top"><span class="sk-n">02</span><span class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span></div>
+          <h3>Full stack</h3>
+          <p>Complete MERN apps: REST APIs in Node and Express, data in MongoDB, authentication, and a React frontend that ties it together.</p>
+          <ul><li>MongoDB</li><li>Express</li><li>Node.js</li><li>REST APIs</li><li>Auth</li></ul>
+        </article>
+        <article class="sk-card" data-anim style="--d:.2s">
+          <div class="sk-top"><span class="sk-n">03</span><span class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></span></div>
+          <h3>UI/UX &amp; design</h3>
+          <p>App interfaces like VaultVu’s, plus brand visuals, posters and social creatives, always designed with the person using them in mind.</p>
+          <ul><li>Figma</li><li>Canva</li><li>Prototyping</li><li>Branding</li></ul>
+        </article>
+      </div>
+      <!-- EDIT: what you're learning right now -->
+      <div class="sk-explore" data-anim>
+        <div class="sk-ex-head">
+          <span class="sk-live"><i></i>Currently exploring</span>
+          <p>Learning out loud, <em>one experiment at a time.</em></p>
+        </div>
+        <div class="sk-ex-items">
+          <article class="sk-ex sk-ai">
+            <svg class="sk-ex-art" viewBox="0 0 160 110" aria-hidden="true">
+              <g class="nn-e"><path d="M20 20L80 15M20 20L80 55M20 20L80 95M20 55L80 15M20 55L80 55M20 55L80 95M20 90L80 15M20 90L80 55M20 90L80 95M80 15L140 35M80 55L140 35M80 95L140 35M80 15L140 75M80 55L140 75M80 95L140 75"/></g>
+              <g class="nn-n"><circle cx="20" cy="20" r="6"/><circle cx="20" cy="55" r="6"/><circle cx="20" cy="90" r="6"/><circle cx="80" cy="15" r="6"/><circle cx="80" cy="55" r="6"/><circle cx="80" cy="95" r="6"/><circle cx="140" cy="35" r="7"/><circle cx="140" cy="75" r="7"/></g>
+            </svg>
+            <span class="sk-ex-n">01 · Learning</span>
+            <b>AI <em>&amp;</em> ML</b>
+            <span class="sk-ex-t">Learning the foundations in Python and building small projects along the way.</span>
+            <ul><li>Python</li><li>Jupyter</li><li>Foundations</li></ul>
+          </article>
+          <article class="sk-ex sk-qc">
+            <svg class="sk-ex-art" viewBox="0 0 160 110" aria-hidden="true">
+              <ellipse class="q-o" cx="80" cy="55" rx="62" ry="18"/>
+              <ellipse class="q-o q-o2" cx="80" cy="55" rx="62" ry="18"/>
+              <ellipse class="q-o q-o3" cx="80" cy="55" rx="62" ry="18"/>
+              <circle class="q-c" cx="80" cy="55" r="13"/>
+              <text class="q-k" x="80" y="104" text-anchor="middle">|0⟩ + |1⟩</text>
+            </svg>
+            <span class="sk-ex-n">02 · Exploring</span>
+            <b>Quantum <em>computing</em></b>
+            <span class="sk-ex-t">Qubits, circuits and Qiskit: exploring it by heart. It already powers Quantum Key Forge.</span>
+            <ul><li>Qiskit</li><li>Qubits</li><li>Circuits</li></ul>
+          </article>
+        </div>
+      </div>
+      <div class="tools" aria-labelledby="tools-h">
+        <h3 id="tools-h">My tech stack</h3>
+        <div class="trow" id="trow1"></div>
+        <div class="trow rev" id="trow2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section class="works light" id="work" aria-labelledby="work-h">
+    <div class="wrap shead">
+      <h2 class="split" id="work-h">Selected <em>work</em></h2>
+      <p data-anim>Things I’ve designed and built, from the database to the last pixel.</p>
+    </div>
+    <div class="wrap"><div class="tiles" id="tiles"></div></div>
+  </section>
+
+  <!-- crossed subject straps before the pinned education; words come from config.js → eduStraps -->
+  <div class="straps-band dark" aria-hidden="true"><div class="straps" data-set="eduStraps"><div class="strap s1"><div class="strap-track"></div></div><div class="strap s2"><div class="strap-track"></div></div></div></div>
+
+  <!-- ============ EDUCATION (pinned) ============ -->
+  <section class="process dark" id="education" aria-labelledby="edu-h">
+    <div class="pstick">
+      <canvas class="gl-layer" id="procCanvas" aria-hidden="true"></canvas>
+      <div class="pcopy">
+        <h2 class="split" id="edu-h">My <em>education</em></h2>
+        <!-- EDIT: each step. data-shape is the name the dots spell out on the right -->
+        <ol class="psteps" id="psteps">
+          <li class="pstep on" data-shape="IKGPTU">
+            <span class="num">01 / 03 · Class of 2028</span><h3>B.Tech</h3>
+            <p>Computer Science &amp; Engineering at I.K. Gujral Punjab Technical University (IKGPTU), currently holding a 9.5 CGPA.</p>
+            <ul><li>CGPA 9.5</li><li>Computer Science</li><li>IKGPTU</li></ul>
+          </li>
+          <li class="pstep" data-shape="PSEB">
+            <span class="num">02 / 03 · PSEB</span><h3>Class 12</h3>
+            <p>High school and senior secondary with the Punjab School Education Board, finishing class 12 with 93%.</p>
+            <ul><li>93% in class 12</li><li>Punjab School Education Board</li></ul>
+          </li>
+          <li class="pstep" data-shape="GCISH">
+            <span class="num">03 / 03 · GCISH</span><h3>School</h3>
+            <p>Where it all started: my schooling at GCISH, completed with an A grade.</p>
+            <ul><li>Grade A</li><li>GCISH</li></ul>
+          </li>
+        </ol>
+        <nav class="prail" id="prail" aria-label="Education steps">
+          <button type="button" aria-current="step">B.Tech</button>
+          <button type="button">Class 12</button>
+          <button type="button">School</button>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAPETERIE: press rubber stamps onto a little Paris postcard ============ -->
+  <section class="papsec light" id="papeterie" aria-labelledby="pp-h">
+    <div class="wrap">
+      <div class="sc-head">
+        <h2 class="split" id="pp-h">Press a <em>postcard</em></h2>
+        <p data-anim>A little break from scrolling. Pick up a stamp, ink it, and press yourself a postcard from Paris.</p>
+      </div>
+      <div class="shop pap" data-anim>
+        <div class="shop-awn" aria-hidden="true"></div>
+        <p class="shop-sign">Mehak’s <em>Papeterie</em></p>
+        <div class="pap-body">
+          <div class="pap-tools">
+            <p class="pap-lab">Pick up a stamp</p>
+            <div class="stamps" id="stamps" role="group" aria-label="Stamps"></div>
+            <label class="pap-lab" for="papMsg">Write a little note</label>
+            <input class="pap-msg" id="papMsg" type="text" maxlength="40" placeholder="Bisous from Paris…" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="pap-desk">
+            <div class="card-wrap" id="cardWrap">
+              <canvas class="card" id="card" width="1500" height="1000" tabindex="0" role="img" aria-label="Your postcard. Click to press the stamp, or press Enter to stamp somewhere random."></canvas>
+              <div class="ghost" id="ghost" aria-hidden="true"><canvas width="280" height="280"></canvas></div>
+            </div>
+            <p class="pap-hint" id="papHint" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="shop-acts">
+          <button type="button" id="ppUndo">Undo</button>
+          <button type="button" id="ppWash">Wash off</button>
+          <button type="button" id="ppNew">New card</button>
+          <button type="button" class="serve" id="ppSave">Download PNG</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REACH OUT: the form posts to Formspree ============ -->
+  <section class="reach dark" id="reach" aria-labelledby="reach-h">
+    <div class="wrap reach-grid">
+      <div class="reach-copy">
+        <h2 class="split" id="reach-h">Reach <em>out</em></h2>
+        <p data-anim>An internship, a freelance project, a collab, or just want to say hi? Drop me a note and I’ll get back to you.</p>
+        <a class="reach-mail" id="reachMail"></a>
+        <div class="socials" id="reachSocials"></div>
+      </div>
+      <form class="rform tw" id="rform" method="POST" data-anim>
+        <div class="tw-feed">
+          <div class="tw-paper">
+            <p class="tw-dear">Dear Mehak,</p>
+            <p class="tw-line">My name is <input name="name" required autocomplete="name" placeholder="your name" aria-label="Your name" class="tw-name">, and you can reach me at <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" aria-label="Email" class="tw-mail">.</p>
+            <textarea name="message" rows="5" required placeholder="Tell me a little about it…" aria-label="Message"></textarea>
+            <input type="text" name="_gotcha" class="r-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_subject" value="New message from your portfolio">
+            <div class="r-foot"><button class="btn r-send" type="submit" id="rSend">Send message<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+              <p class="r-status" id="rStatus" role="status"></p></div>
+          </div>
+          <div class="r-done" id="rDone">
+            <span class="r-tick" aria-hidden="true">✦</span>
+            <b>Message <em>sent</em></b>
+            <p>Thank you for reaching out! I’ll get back to you soon.</p>
+            <button type="button" class="btn line" id="rAgain">Send another</button>
+          </div>
+        </div>
+        <div class="tw-machine">
+          <img class="tw-img" src="images/typewriter.png" alt="" width="736" height="575" loading="lazy" decoding="async">
+          <div class="tw-keys" id="twKeys" aria-hidden="true"></div>
+          <button type="button" class="tw-sound" id="twSound" aria-pressed="true" aria-label="Typewriter sounds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path class="w" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/><path class="x" d="M16 9l6 6M22 9l-6 6"/></svg></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<div class="foot-space" id="contact" aria-hidden="true"></div>
+
+<!-- ============ CONTACT: fixed behind the page, uncovered as the last section scrolls away ============ -->
+<footer class="foot" id="foot">
+  <h2 class="sr-only">Let’s talk</h2>
+  <nav class="foot-links" aria-label="Contact links">
+    <div class="foot-left">
+      <ul><li class="fmail"><a id="footMail"></a><button class="fcopy" id="fcopy" type="button" aria-label="Copy email address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="fcopy-t" aria-live="polite"></span></button></li></ul>
+      <ul class="foot-social" id="footSocial"></ul>
+    </div>
+    <ul><li><a class="foot-top" href="#top">Back to top<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg></a></li></ul>
+  </nav>
+  <div class="foot-end" id="footEnd">
+    <p class="foot-status"><i aria-hidden="true"></i><span id="footStatus"></span></p>
+    <p class="foot-q">Got an idea, a role or a <em>project</em>? I’d love to hear about it.</p>
+  </div>
+  <div class="foot-bottom">
+    <p class="foot-title" id="footTitle" aria-hidden="true"><span>Let’s talk</span></p>
+    <small id="footCopy"></small>
+  </div>
+</footer>
+
+<div class="cview" id="cview" aria-hidden="true">View</div>
+
+<!-- palette switcher (the palettes live in config.js) -->
+<div class="themer" id="themer" role="radiogroup" aria-label="Colour palette"><span class="themer-label" id="themerLabel" aria-hidden="true"></span></div>
+
+<!-- ============ PROJECT SCREEN ============ -->
+<dialog class="case light" id="case" aria-labelledby="caseTitle">
+  <div class="case-bar">
+    <button class="case-back" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to projects</button>
+    <span class="case-count" id="caseCount"></span>
+  </div>
+  <article class="case-in wrap">
+    <div class="cs-split"><div class="cs-steps" id="caseSteps"></div><div class="cs-stage"><div class="cs-visual" id="caseVisual"></div></div></div>
+    <div class="case-foot">
+      <div class="case-links"><a class="btn line" id="caseCode" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>View code on GitHub</a>
+      <a class="btn ink" id="caseLive" target="_blank" rel="noopener">Visit the live project<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+      <button class="case-next" id="caseNext" type="button"><span>Next project</span><b id="caseNextTitle"></b></button>
+    </div>
+  </article>
+</dialog>
+
+<!-- ============ MORE ABOUT ME: a full-screen zine ============ -->
+<dialog class="more" id="more" aria-labelledby="more-h">
+  <div class="mz-bar" aria-hidden="true"><i id="mzProg"></i></div>
+  <button class="mz-x" type="button" data-close aria-label="Close"><span>Close</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="mz" id="mz">
+
+    <!-- 01 · cover -->
+    <header class="mz-cover" id="mzCover">
+      <h2 class="mz-name" id="more-h"><span class="mz-big" data-letters>MEHAKPREET</span><span class="mz-sur"><span class="mz-kaur">Kaur</span> <span class="mz-cheema">Cheema</span></span></h2>
+      <p class="mz-sub">I write code like a <em>designer</em><br>and design like a <b>developer</b>.</p>
+    </header>
+
+    <!-- 02 · manifesto: words ink in as you scroll -->
+    <section class="mz-man">
+      <span class="mz-tag">01 · The short version of a long story</span>
+      <p class="mz-ink" id="mzInk">Most people pick a side. <em>Code</em> or <em>design.</em> Logic or feeling. I <s>picked</s> <mark>kept both.</mark> I care about the database schema <u>and</u> the drop shadow. The API response <u>and</u> the first impression. Because nobody uses code. They use <em>how it feels.</em></p>
+    </section>
+
+    <!-- 03 · the two of me -->
+    <section class="mz-two">
+      <span class="mz-tag">02 · Two of me, one person</span>
+      <div class="mz-halves">
+        <article class="mz-dev">
+          <header><span>&lt;/&gt;</span><b>The developer</b></header>
+          <pre class="mz-code" aria-label="A code snippet describing Mehakpreet"><code id="mzCode"></code><i class="mz-caret"></i></pre>
+          <p>MERN apps end to end: REST APIs in Node &amp; Express, data in MongoDB, auth, and React on top. Now with React Native &amp; Expo for mobile.</p>
+        </article>
+        <article class="mz-des">
+          <header><span>✎</span><b>The designer</b></header>
+          <div class="mz-board" aria-hidden="true">
+            <div class="mz-frame"><span class="mz-aa">Aa</span><i></i><i></i><i></i><i></i><small>Hero / Title · 120 × 64</small></div>
+            <div class="mz-sw"><i style="--c:#472F26"></i><i style="--c:#FEF0B6"></i><i style="--c:#BBD9F3"></i><i style="--c:#4D84CF"></i><i style="--c:#FBD47F"></i></div>
+            <svg class="mz-pen" viewBox="0 0 24 24"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4z"/></svg>
+          </div>
+          <p>App interfaces like VaultVu’s, brand visuals, posters and social creatives in Figma and Canva. Always designed for the person on the other side of the screen.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 05 · things I've made: hover for a peek, click to open -->
+    <section class="mz-made">
+      <span class="mz-tag">03 · Things I’ve made</span>
+      <ol id="mzMade">
+        <li data-i="0" data-img="images/vaultvu/home.webp"><span class="mz-n">01</span><b>VaultVu</b><span class="mz-line">A fraud shield that speaks three languages.</span><span class="mz-go">↗</span></li>
+        <li data-i="1" data-img="images/coffeeaura/hero.jpg"><span class="mz-n">02</span><b>CoffeeAura</b><span class="mz-line">Bean to cup, in a single scroll.</span><span class="mz-go">↗</span></li>
+        <li data-i="2" data-img="images/qkey/top.jpg"><span class="mz-n">03</span><b>Quantum Key Forge</b><span class="mz-line">Six qubits walk into a password.</span><span class="mz-go">↗</span></li>
+      </ol>
+      <div class="mz-peek" id="mzPeek" aria-hidden="true"><img alt=""></div>
+    </section>
+
+    <!-- 06 · currently -->
+    <section class="mz-q">
+      <span class="mz-tag">04 · Currently in superposition</span>
+      <div class="mz-qgrid">
+        <div class="mz-atom" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+        <div>
+          <p class="mz-ket">|ψ⟩ = <span>|developer⟩</span> + <span>|designer⟩</span><small>√2</small></p>
+          <p class="mz-qtxt">Learning <b>AI/ML</b> in Python and exploring <b>quantum computing</b> with Qiskit, one experiment at a time, purely because I love it. Measure me and you’ll get both. <em>(Quantum doesn’t quite work like that. I know. I’m learning.)</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · roots -->
+    <section class="mz-roots">
+      <div class="awning" aria-hidden="true"></div>
+      <p class="mz-gur" lang="pa">ਸਤ ਸ੍ਰੀ ਅਕਾਲ</p>
+      <p class="mz-rtxt">Rooted in <b>Punjab</b>. Dreaming in pixels, thinking in code, and always a little curious about what comes next.</p>
+    </section>
+
+    <!-- 08 · end -->
+    <footer class="mz-end">
+      <div class="mz-loop" aria-hidden="true"><div>Let’s build something that works <em>and</em> looks good ✦ Let’s build something that works <em>and</em> looks good ✦ </div></div>
+      <p class="mz-sign">Mehakpreet</p>
+      <div class="mz-acts">
+        <a class="btn ink" data-mail="Hello Mehakpreet">Email me<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a class="btn line" href="#work" data-close>See all my work</a>
+      </div>
+    </footer>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
